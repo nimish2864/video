@@ -29,15 +29,13 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootstrap-slider/dist/css/bootstrap-slider.min.css"
-,
+              "node_modules/bootstrap-slider/dist/css/bootstrap-slider.min.css",
               "src/styles.scss"
             ],
-            "scripts": [ "node_modules/jquery/dist/jquery.min.js",
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/bootstrap-slider/dist/bootstrap-slider.min.js"
-
-            
             ]
           },
           "configurations": {
@@ -101,12 +99,11 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-
               "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-        "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           }
         },
@@ -136,6 +133,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Video"
+    }
+  },
+  "defaultProject": "Video",
+  "cli": {
+    "analytics": "c39b2608-4327-4a2a-aa05-0eaec09e75ae"
+  }
 }

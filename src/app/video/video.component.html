@@ -23,26 +23,32 @@
     </div>
   </div>
 </div>
-<div class="row" >
+<!-- <div class="row" >
   <div class="col-6">
     <h1 style="color:red;">{{id}}</h1>
   </div>
   <div style=" line-height: 3.6;" class="col-6"><button (click)="redirect()" class="btn back  text-light float-right">Back</button></div>
-  </div>
+  </div> -->
 </div>
 
-<div class=" m-auto lbx container">
-  <h1>Labels</h1>
 
-  <div style="width:100% ;text-align: center;    margin-top: 5%;">
+<div class="container videoprogress">
+  
+  <p class="labels"> Labels</p>
+  <div style="width:100% ;text-align: center;margin-top: 5%;">
     <button class="{{activeBTN=='adult'?'activated':'inActive'}}"(click)="onClickLabel('adult')">Adult</button>
     <button  class="{{activeBTN=='racy'?'activated':'inActive'}}" (click)="onClickLabel('racy')">Racy</button>
-    <button triggers="manual" (click)="openActionPopup(p0)"   #p0=ngbPopover [ngbPopover]="action" [autoClose]="false" >Actions</button>
-    <button triggers="manual" (click)="openEventPopup(p1)"   #p1=ngbPopover [ngbPopover]="events" [autoClose]="false" >Events</button>
+    <button triggers="manual" (click)="openActionPopup(p0)"
+    class="{{activeBTN=='Actions'?'activated':'inActive'}}"
+    #p0=ngbPopover [ngbPopover]="action" [autoClose]="false" >Actions</button>
+    <button triggers="manual" (click)="openEventPopup(p1)"
+    class="{{activeBTN=='Events'?'activated':'inActive'}}"
+    #p1=ngbPopover [ngbPopover]="events" [autoClose]="false" >Events</button>
 
     <button  class="{{activeBTN=='cursedwords'?'activated':'inActive'}}" (click)="onClickLabel('cursedwords')">Cusswords</button>
 
-    <button (click)="onClickLabelReset()">Reset</button>
+    <button (click)="onClickLabelReset()"
+    class="{{activeBTN=='Reset'?'activated':'inActive'}}">Reset</button>
     <button triggers="mouseenter:mouseleave" [ngbPopover]="cF" (click)="clearFilter()" *ngIf="activeFilter" class="float-right">x</button> 
 
     <button class="float-right" triggers="manual" (click)="p.open()"   #p=ngbPopover [ngbPopover]="content" [autoClose]="false" [popoverTitle]="popTitle" *ngIf="activeBTN=='adult'||activeBTN=='racy'||activeBTN=='blood'||activeBTN=='non-blood'||activeBTN=='fight'||activeBTN=='ready'">Filter</button>

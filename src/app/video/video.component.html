@@ -1,5 +1,5 @@
-<div class="container-fluid p-4" style="background-color: whitesmoke;">
-<div class="row ">
+<div class="container-fluid px-3 py-2" style="background-color: whitesmoke; height: 100%;">
+<div class="row">
   <div class="col-lg-9 col-md-9 col-sm-12">
     <video class="embed-responsive" #videoPlayer (progress)="hit()" height="500px" controls id=video controls>
       <source [src]="vs.videoURL" type="video/mp4">
@@ -24,8 +24,8 @@
   </div>
 </div>
 </div>
-<div class="row">
-  <div class="col-sm-12 col-md-5 col-lg-5">
+<div class="row py-5 ">
+  <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 ">
     <!-- <div class="row" >
   <div class="col-6">
     <h1 style="color:red;">{{id}}</h1>
@@ -33,10 +33,10 @@
   <div style=" line-height: 3.6;" class="col-6"><button (click)="redirect()" class="btn back  text-light float-right">Back</button></div>
   </div> -->
   </div>
-  <div class="col-sm-12 col-md-7 col-lg-7" style="flex:0 0 100%;max-width: 100%;">   
+  <div class="col-sm-12 col-md-8 col-lg-8 card">   
     <div class="videoprogress">
-      <p class="labels"> Labels</p>
-      <div style="width:100% ;text-align: center;margin-top: 5%;">
+      <p class="labels m-0"> Labels</p>
+      <div style="width:100% ;text-align: center;">
         <button class="{{activeBTN=='adult'?'activated':'inActive'}}"(click)="onClickLabel('adult')">Adult</button>
         <button  class="{{activeBTN=='racy'?'activated':'inActive'}}" (click)="onClickLabel('racy')">Racy</button>
         <button triggers="manual" (click)="openActionPopup(p0)"

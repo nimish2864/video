@@ -1,0 +1,25 @@
+
+<div *ngIf="videos==null">
+  <app-spiner></app-spiner>
+</div>
+<div class="container-fluid px-5">
+  <h1 class="text-center">Videos</h1>
+    <div *ngIf="videos!=null" class="row ">
+      <div class="col col-md-4 col-sm-4 mb-5" *ngFor="let mark of videos| keyvalue ">
+          <div (click)="goToVideo(mark.key,mark.value)" class="card">
+            <div class="card-body p-0">
+              <div class="row">
+                <div class="col-12 col-md-5">
+                  <img src="https://picsum.photos/300/200" class="img-fluid" style="height: 100%;width: 100%;">
+                </div>
+                <div class="col-12 col-md-7 pt-3">
+                  <h5 class="card-title">{{mark.key}}</h5>
+                  <br><br><br><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- /.container -->

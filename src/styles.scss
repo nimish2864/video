@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+.inner{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: #040e06;
+    }
+  #custom-seekbar
+  {  
+  cursor: pointer;
+  height: 10px;
+  margin-bottom: 10px;
+  outline: thin solid orange;
+  overflow: hidden;
+  position: relative;
+  width: 400px;
+  }
+  #custom-seekbar span
+  {
+  background-color: orange;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 0px;
+  }
+  
+  #bar{
+    height: 10px;
+    background-color: rgb(1, 12, 12);
+    width: 100%;
+    position: relative;
+  }
+  .caption{
+    color:rgb(78, 78, 78)
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  .column2 {
+    float: right;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  /* Clear floats after the columns */
+  .row2:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .sidevideo{
+    width: 600px;
+    height: 400px;
+  }
+  button{
+    border-radius: 50px;
+    background-color: #ff6a00;
+    padding: 0 10px;
+    border: none;
+    margin: 5px;
+    color: #fff;
+    outline:none;
+    transition: top ease 0.3s;
+    position: relative;
+    top: 0;
+
+  
+  }
+  button:hover{
+    top: -3px;
+
+  }
+  button:active {
+    outline:none;
+    background-color: #000;
+    color: #fff;
+  }
+  button:focus {
+    outline:none;
+    background-color: #000;
+    color: #fff;
+  }
+  .activated{
+    background-color: #000;
+    color: #fff;
+  }
+  .lbx{
+  border-radius: 7px;
+  border: 1px solid #ee0979;  }
+  body{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .t_btn{
+    width: 79px;
+    height: 40px;
+  }

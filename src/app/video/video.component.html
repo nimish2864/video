@@ -1,4 +1,4 @@
-<div class="m-5">
+<div class="p-5" style="background-color: whitesmoke;">
 <div class="row ">
   <div class="col-lg-8 col-md-8 col-sm-12">
     <video class="embed-responsive" #videoPlayer (progress)="hit()" controls id=video width="" height="" controls>
@@ -7,19 +7,19 @@
     </video>
   </div>
 <div class="col-lg-4 col-md-4 col-sm-12 ">
-  <div style="height: 450px;overflow-y: scroll;" class="blockrow">
+  <div class="subtitle-box">
     <div *ngIf="transcript==null">
       <app-spiner></app-spiner>
     </div>
     <div *ngIf="transcript!=null">
-      <table class="table">
-        <thead><th>Start Time</th><th>End Time</th><th>Subtitles</th></thead>
-        <tr *ngFor="let script of transcript|keyvalue:originalOrder">
-          <td>{{script.value.start}}</td>
-          <td>{{script.value.end}}</td>
-          <td>{{script.value.text}}</td>
-        </tr>
-      </table>
+      <h3 class="p-2">Subtitles</h3>
+      <hr>
+      <div class="subtitle">
+        <div *ngFor="let script of transcript|keyvalue:originalOrder" class="subtitle-content">
+          <p class="duration">{{script.value.start}} - {{script.value.end}}</p>
+          <p class="content">{{script.value.text}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

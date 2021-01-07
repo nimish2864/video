@@ -1,18 +1,18 @@
-<div class="p-5" style="background-color: whitesmoke;">
+<div class="container-fluid p-4" style="background-color: whitesmoke;">
 <div class="row ">
-  <div class="col-lg-8 col-md-8 col-sm-12">
-    <video class="embed-responsive" #videoPlayer (progress)="hit()" controls id=video width="" height="" controls>
+  <div class="col-lg-9 col-md-9 col-sm-12">
+    <video class="embed-responsive" #videoPlayer (progress)="hit()" height="500px" controls id=video controls>
       <source [src]="vs.videoURL" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
-<div class="col-lg-4 col-md-4 col-sm-12 ">
+<div class="col-lg-3 col-md-3 col-sm-12 ">
   <div class="subtitle-box">
     <div *ngIf="transcript==null">
       <app-spiner></app-spiner>
     </div>
     <div *ngIf="transcript!=null">
-      <h3 class="p-2">Subtitles</h3>
+      <h3 class="p-2 m-0">Subtitles</h3>
       <hr>
       <div class="subtitle">
         <div *ngFor="let script of transcript|keyvalue:originalOrder" class="subtitle-content">
@@ -23,57 +23,60 @@
     </div>
   </div>
 </div>
-<!-- <div class="row" >
+</div>
+<div class="row">
+  <div class="col-sm-12 col-md-5 col-lg-5">
+    <!-- <div class="row" >
   <div class="col-6">
     <h1 style="color:red;">{{id}}</h1>
   </div>
   <div style=" line-height: 3.6;" class="col-6"><button (click)="redirect()" class="btn back  text-light float-right">Back</button></div>
   </div> -->
-</div>
+  </div>
+  <div class="col-sm-12 col-md-7 col-lg-7" style="flex:0 0 100%;max-width: 100%;">   
+    <div class="videoprogress">
+      <p class="labels"> Labels</p>
+      <div style="width:100% ;text-align: center;margin-top: 5%;">
+        <button class="{{activeBTN=='adult'?'activated':'inActive'}}"(click)="onClickLabel('adult')">Adult</button>
+        <button  class="{{activeBTN=='racy'?'activated':'inActive'}}" (click)="onClickLabel('racy')">Racy</button>
+        <button triggers="manual" (click)="openActionPopup(p0)"
+        class="{{activeBTN=='Actions'?'activated':'inActive'}}"
+        #p0=ngbPopover [ngbPopover]="action" [autoClose]="false" >Actions</button>
+        <button triggers="manual" (click)="openEventPopup(p1)"
+        class="{{activeBTN=='Events'?'activated':'inActive'}}"
+        #p1=ngbPopover [ngbPopover]="events" [autoClose]="false" >Events</button>
 
+        <button  class="{{activeBTN=='cursedwords'?'activated':'inActive'}}" (click)="onClickLabel('cursedwords')">Cusswords</button>
 
-<div class="container videoprogress">
-  
-  <p class="labels"> Labels</p>
-  <div style="width:100% ;text-align: center;margin-top: 5%;">
-    <button class="{{activeBTN=='adult'?'activated':'inActive'}}"(click)="onClickLabel('adult')">Adult</button>
-    <button  class="{{activeBTN=='racy'?'activated':'inActive'}}" (click)="onClickLabel('racy')">Racy</button>
-    <button triggers="manual" (click)="openActionPopup(p0)"
-    class="{{activeBTN=='Actions'?'activated':'inActive'}}"
-    #p0=ngbPopover [ngbPopover]="action" [autoClose]="false" >Actions</button>
-    <button triggers="manual" (click)="openEventPopup(p1)"
-    class="{{activeBTN=='Events'?'activated':'inActive'}}"
-    #p1=ngbPopover [ngbPopover]="events" [autoClose]="false" >Events</button>
+        <button (click)="onClickLabelReset()"
+        class="{{activeBTN=='Reset'?'activated':'inActive'}}">Reset</button>
+        <button triggers="mouseenter:mouseleave" [ngbPopover]="cF" (click)="clearFilter()" *ngIf="activeFilter" class="float-right">x</button> 
 
-    <button  class="{{activeBTN=='cursedwords'?'activated':'inActive'}}" (click)="onClickLabel('cursedwords')">Cusswords</button>
+        <button class="float-right" triggers="manual" (click)="p.open()"   #p=ngbPopover [ngbPopover]="content" [autoClose]="false" [popoverTitle]="popTitle" *ngIf="activeBTN=='adult'||activeBTN=='racy'||activeBTN=='blood'||activeBTN=='non-blood'||activeBTN=='fight'||activeBTN=='ready'">Filter</button>
+        <div id="bar" style=" height:10px;background-color: rgb(0 0 0 / 19%);width: 100%;">
+          <div *ngIf="markers!=null">
 
-    <button (click)="onClickLabelReset()"
-    class="{{activeBTN=='Reset'?'activated':'inActive'}}">Reset</button>
-    <button triggers="mouseenter:mouseleave" [ngbPopover]="cF" (click)="clearFilter()" *ngIf="activeFilter" class="float-right">x</button> 
-
-    <button class="float-right" triggers="manual" (click)="p.open()"   #p=ngbPopover [ngbPopover]="content" [autoClose]="false" [popoverTitle]="popTitle" *ngIf="activeBTN=='adult'||activeBTN=='racy'||activeBTN=='blood'||activeBTN=='non-blood'||activeBTN=='fight'||activeBTN=='ready'">Filter</button>
-    <div id="bar" style=" height:10px;background-color: rgb(0 0 0 / 19%);width: 100%;">
-      <div *ngIf="markers!=null">
-
-        <div *ngFor="let mark of markers">
-          <div data-toggle="tooltip" data-placement="left"
-          ngbTooltip="{{mark.word!=undefined?'Word:':'Score:'}} {{mark.adult||mark.racy||mark.word||mark.score||0}}" (click)="onClickSegment(mark)"
-            [ngStyle]="{'width':(100/duration)*(mark.end-mark.start)+'%',
-          'left':(100/duration)*mark.start+'%'
-        }" class="inner"></div>
+            <div *ngFor="let mark of markers">
+              <div data-toggle="tooltip" data-placement="left"
+              ngbTooltip="{{mark.word!=undefined?'Word:':'Score:'}} {{mark.adult||mark.racy||mark.word||mark.score||0}}" (click)="onClickSegment(mark)"
+                [ngStyle]="{'width':(100/duration)*(mark.end-mark.start)+'%',
+              'left':(100/duration)*mark.start+'%'
+            }" class="inner"></div>
+            </div>
+          </div>
+        </div>
+        <div id="px" style="background-color: #ee09794d;height: 4px;" [style.width]="percentage"> 
+        </div>
+        <div class="row2">
+          <div class="caption" style="float: left;">00.00.00</div>
+          <div class="caption" style="float: right;">{{readableTime.h}}:{{readableTime.m}}:{{readableTime.s}}</div>
         </div>
       </div>
     </div>
-    <div id="px" style="background-color: #ee09794d;height: 4px;" [style.width]="percentage"> 
-    </div>
-    <div class="row2">
-      <div class="caption" style="float: left;">00.00.00</div>
-      <div class="caption" style="float: right;">{{readableTime.h}}:{{readableTime.m}}:{{readableTime.s}}</div>
-    </div>
   </div>
 </div>
-</div>
-<!-- Modal for Filter -->
+
+  <!-- Modal for Filter -->
 <ng-template #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Filter Range </h4>
@@ -124,3 +127,5 @@ Clear Filter from {{filterValues.sv}} to {{filterValues.ev}}
     <button  *ngIf="actionApi==null " class="{{activeBTN=='non-blood'?'activated':'inActive'}}">Loading..</button>
     
     </ng-template>
+
+</div>

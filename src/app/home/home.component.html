@@ -3,7 +3,7 @@
   <app-spiner></app-spiner>
 </div>
 <div class="container-fluid px-5">
-  <h1 class="text-center" style="">Video Analytics</h1>
+  <h1 class="text-center" style="font-family: 'Mont';">Video Analytics</h1>
     <div *ngIf="videos!=null" class="row ">
       <div class="col col-md-4 col-sm-4 mb-5" *ngFor="let mark of videos| keyvalue ">
           <div (click)="goToVideo(mark.key,mark.value)" class="card">

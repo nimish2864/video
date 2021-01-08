@@ -5,14 +5,16 @@
 <div class="container-fluid px-5">
   <h1 class="text-center" style="font-family: 'Mont';">Video Analytics</h1>
     <div *ngIf="videos!=null" class="row ">
-      <div class="col col-md-4 col-sm-4 mb-5" *ngFor="let mark of videos| keyvalue ">
+      <div class="col col-md-4 col-sm-4" *ngFor="let mark of videos| keyvalue ">
           <div (click)="goToVideo(mark.key,mark.value)" class="card">
             <div class="card-body p-0">
               <div class="row">
                 <div class="col-12 col-md-5">
-                  <img src="https://picsum.photos/300/200" class="img-fluid" style="height: 70%;width: 100%; border-top-left-radius: 10px;border-bottom-left-radius: 10px;">
+                  <img src="https://picsum.photos/300/200" class="img-fluid" style="height: 70%;width: 100%; border-top-left-radius: 0px;border-bottom-left-radius: 10px;">
                 </div>
-                <div class="col-12 col-md-7 pt-3">
+                <div class="col-12 col-md-7 pt-3" style="-webkit-box-shadow: -96px 0px 13px -5px rgba(255,255,255,0.68);
+                -moz-box-shadow: -96px 0px 13px -5px rgba(255,255,255,0.68);
+                box-shadow: -96px 0px 13px -5px rgba(255,255,255,0.68);">
                   <h5 class="card-title">{{mark.key}}</h5>
                   <div class="row mb-2 ml-0">
                     <div class="col-4 p-0 fontcss">English|Hindi</div>
@@ -40,6 +42,9 @@
               </div>
             </div>
           </div>
+        </div>
+        <div>
+          dfhkdf
         </div>
     </div>
   </div>

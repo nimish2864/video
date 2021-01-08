@@ -4,8 +4,20 @@
 
 .rounded-pill{
     color:white;
-    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    cursor: pointer;
+    font-size: 10px;
 }
 .fontcss{
     font-size: 12px;
+}
+.greypill{
+    background-color: rgb(196, 196, 196);
+}
+.card{
+    height: 70%;
+    border-radius: 10px;
 }

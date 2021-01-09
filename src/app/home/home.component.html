@@ -1,18 +1,18 @@
 <div *ngIf="videos==null">
   <app-spiner></app-spiner>
 </div>
-<div class="container-fluid px-5">
-  <h1 class="text-center" style="font-family: 'Mont';margin-top: 18px;">Video Analytics</h1>
-  <div *ngIf="videos!=null" class="row">
-    <div class="col col-md-4 col-sm-4" *ngFor="let mark of videos| keyvalue ">
-      <div (click)="goToVideo(mark.key,mark.value)" class="card">
+<div class="container-fluid px-4">
+  <h1 class="text-center" style="font-family: 'Mont';margin-top: 10px;">Video Analytics</h1>
+  <div *ngIf="videos!=null" class="row ">
+    <div class="col col-md-4 col-sm-4 mainrow" *ngFor="let mark of videos| keyvalue ">
+      <div (click)="goToVideo(mark.key,mark.value)" class="card ">
         <div class="card-body p-0">
-          <div class="row">
-            <div class="col-12 col-md-5">
-              <img src="https://picsum.photos/300/200" class="img-fluid fadedimage"
-                style="height: 70%;width: 100%; border-top-left-radius: 0px;border-bottom-left-radius: 10px; ">
+          <div class="row "  >
+            <div class="col-12 col-md-5 ">
+              <img src="https://picsum.photos/300/200" class="img-fluid "
+                style="height: 80%;width: 100%; border-top-left-radius: 10px;border-bottom-left-radius: 10px; ">
             </div>
-            <div class="col-12 col-md-7 pt-3 ">
+            <div class="col-12 col-md-7 p-2 fadedimage" style="height: 180px;" >
               <h5 class="card-title">{{mark.key}}</h5>
               <!-- <div class="row mb-2 ml-0">
                     <div class="col-4 p-0 fontcss">English|Hindi</div>

@@ -16,14 +16,18 @@
   background-color: rgb(196, 196, 196);
 }
 .card {
-  height: 70%;
-  border-radius: 0 10px 10px 10px;
+  height: 80%;
+  border-radius: 10px 10px 10px 10px;
   //     -webkit-box-shadow: 10px 10px 6px -9px rgba(0,0,0,0.75);
   // -moz-box-shadow: 10px 10px 6px -9px rgba(0,0,0,0.75);
   // box-shadow: 10px 10px 6px -9px rgba(0,0,0,0.75);
 }
 .fadedimage {
-  webkit-box-shadow: -106px 0px 15px -5px rgba(255, 255, 255, 0.68);
-  -moz-box-shadow: -56px 0px 13px -5px rgba(255, 255, 255, 0.68);
-  box-shadow: -96px 0px 13px -5px rgba(255, 255, 255, 0.68);
+  webkit-box-shadow: -96px -20px 13px 10px rgba(255, 255, 255, 0.19);
+  -moz-box-shadow: -56px -20px 13px -10px rgba(255, 255, 255, 0.19);
+  box-shadow: -96px 0px 13px 5px rgba(255, 255, 255, 0.19);
+}
+.mainrow{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

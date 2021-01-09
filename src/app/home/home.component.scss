@@ -1,26 +1,29 @@
 // custom css
 
-
-
-.rounded-pill{
-    color:white;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    cursor: pointer;
-    font-size: 10px;
+.rounded-pill {
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  cursor: pointer;
+  font-size: 10px;
 }
-.fontcss{
-    font-size: 12px;
+.fontcss {
+  font-size: 12px;
 }
-.greypill{
-    background-color: rgb(196, 196, 196);
+.greypill {
+  background-color: rgb(196, 196, 196);
 }
-.card{
-    height: 70%;
-    border-radius: 0 10px 10px 10px;
-//     -webkit-box-shadow: 10px 10px 6px -9px rgba(0,0,0,0.75);
-// -moz-box-shadow: 10px 10px 6px -9px rgba(0,0,0,0.75);
-// box-shadow: 10px 10px 6px -9px rgba(0,0,0,0.75);
+.card {
+  height: 70%;
+  border-radius: 0 10px 10px 10px;
+  //     -webkit-box-shadow: 10px 10px 6px -9px rgba(0,0,0,0.75);
+  // -moz-box-shadow: 10px 10px 6px -9px rgba(0,0,0,0.75);
+  // box-shadow: 10px 10px 6px -9px rgba(0,0,0,0.75);
+}
+.fadedimage {
+  webkit-box-shadow: -106px 0px 15px -5px rgba(255, 255, 255, 0.68);
+  -moz-box-shadow: -56px 0px 13px -5px rgba(255, 255, 255, 0.68);
+  box-shadow: -96px 0px 13px -5px rgba(255, 255, 255, 0.68);
 }
